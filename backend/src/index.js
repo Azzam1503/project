@@ -18,6 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
+app.use("/api/v1/user", require("./routes/user.router"));
+
 app.listen(process.env.PORT, () => {
   console.log(`App is running on port ${process.env.PORT}`);
 });
